@@ -1,0 +1,640 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+
+<div class="container"> 
+
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        
+        {% comment %} Customer Information {% endcomment %}
+        <div class="col-12">
+            <h1 class="text-center mt-5 col-12"> Customer Information </h1>
+            <div class="row"> 
+
+                {% comment %} name {% endcomment %}
+                <div class="col-12 col-md-6 my-3">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                    {% if form.name.help_text %}
+                        <small class="form-text text-muted">{{ form.name.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.name.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                        
+                    {% endfor %}
+                </div>
+            
+            
+                {% comment %} Contect number {% endcomment %}
+                <div class="col-12 col-md-6 my-3">
+                    {{ form.contact_number.label_tag }}
+                    {{ form.contact_number }}
+                    {% if form.contact_number.help_text %}
+                        <small class="form-text text-muted">{{ form.contact_number.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.contact_number.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+            
+                {% comment %} Email {% endcomment %}
+                <div class="col-12 my-3">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {% if form.email.help_text %}
+                        <small class="form-text text-muted">{{ form.email.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.email.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+            
+                {% comment %} delivary addres {% endcomment %}
+                <div class="col-12 my-3">
+                    {{ form.delivery_address.label_tag }}
+                    {{ form.delivery_address }}
+                    {% if form.delivery_address.help_text %}
+                        <small class="form-text text-muted">{{ form.delivery_address.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.delivery_address.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            </div>
+        
+        </div> 
+        {% comment %} ============================================================ {% endcomment %}
+       
+
+        {% comment %} Cake Details {% endcomment %}
+        <div class="col-12 mt-5">
+            <h1 class="text-center col-12"> Cake Details </h1>
+            <div class="row"> 
+
+
+                {% comment %} occasion {% endcomment %}
+    
+                <div class="col-12 col-md-6 mt-3" >
+                    {{ form.occasion.label_tag }}
+                    {{ form.occasion }}
+                    {% if form.occasion.help_text %}
+                        <small class="form-text text-muted">{{ form.occasion.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.occasion.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="other_occasion_section">
+                    {{ form.other_occasion.label_tag }}
+                    {{ form.other_occasion }}
+                    {% if form.other_occasion.help_text %}
+                        <small class="form-text text-muted">{{ form.other_occasion.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.other_occasion.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+        
+            
+            
+                {% comment %} Cake size {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.cake_size.label_tag }}
+                    {{ form.cake_size }}
+                    {% if form.cake_size.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_size.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_size.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="cake_other_size_section">
+                    {{ form.other_cake_size.label_tag }}
+                    {{ form.other_cake_size }}
+                    {% if form.other_cake_size.help_text %}
+                        <small class="form-text text-muted">{{ form.other_cake_size.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.other_cake_size.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+
+                </div>
+            
+            
+            
+            
+                {% comment %} Cake shape {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.cake_shape.label_tag }}
+                    {{ form.cake_shape }}
+                    {% if form.cake_shape.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_shape.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_shape.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="cake_other_shape_section">
+                    {{ form.cake_other_shape.label_tag }}
+                    {{ form.cake_other_shape }}
+                    {% if form.cake_other_shape.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_other_shape.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_other_shape.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+
+            
+            
+                {% comment %} Cake flavors {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.cake_flavors.label_tag }}
+                    {{ form.cake_flavors }}
+                    {% if form.cake_flavors.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_flavors.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_flavors.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="cake_other_flavors_section">
+                    {{ form.cake_other_flavors.label_tag }}
+                    {{ form.cake_other_flavors }}
+                    {% if form.cake_other_flavors.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_other_flavors.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_other_flavors.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+            
+
+                {% comment %} Cake filling {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+            
+                    {{ form.cake_filling.label_tag }}
+                    {{ form.cake_filling }}
+                    {% if form.cake_filling.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_filling.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_filling.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="cake_other_filling_sectio">
+                    {{ form.cake_other_filling.label_tag }}
+                    {{ form.cake_other_filling }}
+                    {% if form.cake_other_filling.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_other_filling.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_other_filling.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="fruit_types_sectio">
+                    {{ form.fruit_types.label_tag }}
+                    {{ form.fruit_types }}
+                    {% if form.fruit_types.help_text %}
+                        <small class="form-text text-muted">{{ form.fruit_types.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.fruit_types.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+
+            
+
+                {% comment %} Cake frosting {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.cake_frosting.label_tag }}
+                    {{ form.cake_frosting }}
+                    {% if form.cake_frosting.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_frosting.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_frosting.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+
+
+
+                {% comment %} Cake decorations {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.cake_decorations.label_tag }}
+                    {{ form.cake_decorations }}
+                    {% if form.cake_decorations.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_decorations.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_decorations.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 col-md-6 mt-3" id="cake_other_decorations_sectio">
+                    {{ form.cake_other_decorations.label_tag }}
+                    {{ form.cake_other_decorations }}
+                    {% if form.cake_other_decorations.help_text %}
+                        <small class="form-text text-muted">{{ form.cake_other_decorations.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.cake_other_decorations.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+
+
+
+                {% comment %} Cake Text {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.text.label_tag }}
+                    {{ form.text }}
+                    {% if form.text.help_text %}
+                        <small class="form-text text-muted">{{ form.text.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.text.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+
+
+                {% comment %} Cake font style {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.font_style.label_tag }}
+                    {{ form.font_style }}
+                    {% if form.font_style.help_text %}
+                        <small class="form-text text-muted">{{ form.font_style.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.font_style.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+            
+
+                {% comment %} Cake color {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    {{ form.colour.label_tag }}
+                    {{ form.colour }}
+                    {% if form.colour.help_text %}
+                        <small class="form-text text-muted">{{ form.colour.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.colour.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+
+
+            </div>
+        
+        </div> 
+        {% comment %} ============================================================ {% endcomment %}
+       
+
+        {% comment %} Another Details {% endcomment %}
+        <div class="col-12 mt-5">
+            <h1 class="text-center col-12"> Another Details </h1>
+            <div class="row"> 
+
+                {% comment %} additional requests {% endcomment %}
+                <div class="col-12 mt-3">
+                    {{ form.additional_requests.label_tag }}
+                    {{ form.additional_requests }}
+                    {% if form.additional_requests.help_text %}
+                        <small class="form-text text-muted">{{ form.additional_requests.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.additional_requests.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+                {% comment %} Delivary type {% endcomment %}
+                <div class="col-12 mt-3">
+                    {{ form.delivaery_or_pickme.label_tag }}
+                    {{ form.delivaery_or_pickme }}
+                    {% if form.delivaery_or_pickme.help_text %}
+                        <small class="form-text text-muted">{{ form.delivaery_or_pickme.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.delivaery_or_pickme.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                {% comment %} Date {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    <div class="col-12">
+                        {{ form.preferred_date.label_tag }}
+                    </div>    
+                    <div class="col-12 d-grid">
+                        {{ form.preferred_date }}
+                    </div> 
+                    {% if form.preferred_date.help_text %}
+                        <small class="form-text text-muted">{{ form.preferred_date.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.preferred_date.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+                {% comment %} Time {% endcomment %}
+                <div class="col-12 col-md-6 mt-3">
+                    <div class="col-12">
+                        {{ form.preferred_time.label_tag }}
+                    </div>    
+                    <div class="col-12 d-grid">
+                        {{ form.preferred_time }}
+                    </div>
+                    
+                    {% if form.preferred_time.help_text %}
+                        <small class="form-text text-muted">{{ form.preferred_time.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.preferred_time.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                {% comment %} Payment method {% endcomment %}
+                <div class="col-12 mt-3">
+                    {{ form.paymentmethod.label_tag }}
+                    {{ form.paymentmethod }}
+                    {% if form.paymentmethod.help_text %}
+                        <small class="form-text text-muted">{{ form.paymentmethod.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.paymentmethod.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+                <div class="col-12 mt-3">
+                    {{ form.other_paymentmethod.label_tag }}
+                    {{ form.other_paymentmethod }}
+                    {% if form.other_paymentmethod.help_text %}
+                        <small class="form-text text-muted">{{ form.other_paymentmethod.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.other_paymentmethod.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+            
+            
+                {% comment %}  Sampal image {% endcomment %}
+                <div class="mt-3">
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
+                    {% if form.image.help_text %}
+                        <small class="form-text text-muted">{{ form.image.help_text }}</small>
+                    {% endif %}
+                    {% for error in form.image.errors %}
+                        <small class="form-text text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+        </div>
+        {% comment %} ============================================================ {% endcomment %}
+
+        
+    </div>
+       
+
+          <button type="submit" class="btn btn-primary my-5 d-grid col-12">Login</button>
+    
+
+    
+    </form>
+
+
+<div>    
+
+
+<script>
+
+
+    
+
+
+
+
+    const cake_occasion_field = document.getElementById('id_occasion');
+    const cake_other_occasion_field = document.getElementById('other_occasion_section');
+    
+    
+    cake_other_occasion_field.style.display = 'none';
+
+    cake_occasion_field.addEventListener('change', function() {
+        if (cake_occasion_field.value === 'other') {
+            
+            cake_other_occasion_field.style.display = 'block';
+            cake_other_occasion_field.querySelector('input').required = true;
+            
+        } else {
+            
+            cake_other_occasion_field.style.display = 'none';
+            cake_other_occasion_field.querySelector('input').required = false;
+
+        }
+    });
+
+
+
+
+    const cake_size_field = document.getElementById('id_cake_size');
+    const cake_other_size_field = document.getElementById('cake_other_size_section');
+  
+
+    cake_other_size_field.style.display = 'none';
+
+    cake_size_field.addEventListener('change', function() {
+        if (cake_size_field.value === 'Custom size') {
+            cake_other_size_field.style.display = 'block';
+            cake_other_size_field.querySelector('input').required = true;
+            
+        } else {
+
+            cake_other_size_field.style.display = 'none';
+            cake_other_size_field.querySelector('input').required = false;
+            
+            
+        }
+    });
+
+
+
+
+
+    
+
+    const cake_shape_field = document.getElementById('id_cake_shape');
+    const cake_other_shape_field = document.getElementById('cake_other_shape_section');
+  
+    cake_other_shape_field.style.display = 'none';
+
+    cake_shape_field.addEventListener('change', function() {
+        if (cake_shape_field.value === 'Custom shape') {
+
+            cake_other_shape_field.style.display = 'block';
+            cake_other_shape_field.querySelector('input').required = true;
+            
+        } else {
+
+            cake_other_shape_field.style.display = 'none';
+            cake_other_shape_field.querySelector('input').required = false;
+            
+            
+        }
+    });
+
+
+
+
+
+    const cake_flavors_field = document.getElementById('id_cake_flavors');
+  
+    const cake_other_flavors_field = document.getElementById('cake_other_flavors_section');
+  
+
+    cake_other_flavors_field.style.display = 'none';
+
+    cake_flavors_field.addEventListener('change', function() {
+        if (cake_flavors_field.value === 'Custom flavor') {
+            cake_other_flavors_field.style.display = 'block';
+            cake_other_flavors_field.querySelector('input').required = true;
+            
+        } else {
+    
+            cake_other_flavors_field.style.display = 'none';
+            cake_other_flavors_field.querySelector('input').required = false;
+            
+            
+        }
+    });
+
+
+
+
+    const cake_filling_field = document.getElementById('id_cake_filling');
+    const cake_other_filling_field = document.getElementById('cake_other_filling_sectio');
+
+    const filling_fruit_types_field = document.getElementById('fruit_types_sectio');
+
+    
+    cake_other_filling_field.style.display = 'none';
+
+    
+    filling_fruit_types_field.style.display = 'none';
+
+
+    cake_filling_field.addEventListener('change', function() {
+        if (cake_filling_field.value === 'other') {
+
+            
+            filling_fruit_types_field.style.display = 'none';
+            cake_other_filling_field.style.display = 'block';
+            cake_other_filling_field.querySelector('input').required = true;
+            filling_fruit_types_field.querySelector('input').required = false;
+
+
+            
+        }else if (cake_filling_field.value === 'Fruit') {
+
+            
+            cake_other_filling_field.style.display = 'none';
+            filling_fruit_types_field.style.display = 'block';
+            filling_fruit_types_field.querySelector('input').required = true;
+            cake_other_filling_field.querySelector('input').required = false;
+
+
+
+            
+        }else {
+
+
+            
+            filling_fruit_types_field.style.display = 'none';
+            cake_other_filling_field.style.display = 'none';
+            cake_other_filling_field.querySelector('input').required = false;
+            filling_fruit_types_field.querySelector('input').required = false;
+
+            
+            
+        }
+    });
+
+
+
+  
+    const cake_decorations_field = document.getElementById('id_cake_decorations');
+    const cake_other_decorations_field = document.getElementById('cake_other_decorations_sectio');
+  
+    
+    cake_other_decorations_field.style.display = 'none';
+
+    cake_decorations_field.addEventListener('change', function() {
+        if (cake_decorations_field.value === 'Custom decoration') {
+            cake_other_decorations_field.style.display = 'block';
+            cake_other_decorations_field.querySelector('input').required = true;
+            
+        } else {
+            cake_other_decorations_label.style.display = 'none';
+            cake_other_decorations_field.style.display = 'none';
+            cake_other_decorations_field.querySelector('input').required = false;
+            
+            
+        }
+    });
+
+
+    const paymentmethod_field = document.getElementById('id_paymentmethod');
+    const other_paymentmethod_label = document.querySelector('label[for="id_other_paymentmethod"]');
+    const other_paymentmethod_field = document.getElementById('id_other_paymentmethod');
+
+    other_paymentmethod_label.style.display = 'none';
+    other_paymentmethod_field.style.display = 'none';
+
+    paymentmethod_field.addEventListener('change', function() {
+        if (paymentmethod_field.value === 'other') {
+            other_paymentmethod_label.style.display = 'inline-block';
+            other_paymentmethod_field.style.display = 'block';
+            other_paymentmethod_field.querySelector('input').required = true;
+            
+        } else {
+            other_paymentmethod_label.style.display = 'none';
+            other_paymentmethod_field.style.display = 'none';
+            other_paymentmethod_field.querySelector('input').required = false;
+            
+            
+        }
+    });
+
+
+
+
+  
+</script>
+
+{% endblock %}
