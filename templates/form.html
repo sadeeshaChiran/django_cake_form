@@ -18,7 +18,7 @@
 
                 {% comment %} name {% endcomment %}
                 <div class="col-12 col-md-6 my-3">
-                    {{ form.name.label_tag }}
+                    <label for="id_name" class="form-label">Name</label>
                     {{ form.name }}
                     {% if form.name.help_text %}
                         <small class="form-text text-muted">{{ form.name.help_text }}</small>
@@ -32,7 +32,7 @@
             
                 {% comment %} Contect number {% endcomment %}
                 <div class="col-12 col-md-6 my-3">
-                    {{ form.contact_number.label_tag }}
+                    <label for="id_contact_number" class="form-label">Contact Number</label>
                     {{ form.contact_number }}
                     {% if form.contact_number.help_text %}
                         <small class="form-text text-muted">{{ form.contact_number.help_text }}</small>
@@ -46,7 +46,7 @@
             
                 {% comment %} Email {% endcomment %}
                 <div class="col-12 my-3">
-                    {{ form.email.label_tag }}
+                    <label for="id_email" class="form-label">Email Address</label>
                     {{ form.email }}
                     {% if form.email.help_text %}
                         <small class="form-text text-muted">{{ form.email.help_text }}</small>
@@ -60,7 +60,7 @@
             
                 {% comment %} delivary addres {% endcomment %}
                 <div class="col-12 my-3">
-                    {{ form.delivery_address.label_tag }}
+                    <label for="id_delivery_address" class="form-label">Delivery Address</label>
                     {{ form.delivery_address }}
                     {% if form.delivery_address.help_text %}
                         <small class="form-text text-muted">{{ form.delivery_address.help_text }}</small>
@@ -85,7 +85,7 @@
                 {% comment %} occasion {% endcomment %}
     
                 <div class="col-12 col-md-6 mt-3" >
-                    {{ form.occasion.label_tag }}
+                    <label for="id_occasion" class="form-label">Occasion</label>
                     {{ form.occasion }}
                     {% if form.occasion.help_text %}
                         <small class="form-text text-muted">{{ form.occasion.help_text }}</small>
@@ -96,7 +96,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="other_occasion_section">
-                    {{ form.other_occasion.label_tag }}
+                    <label for="id_other_occasion" class="form-label">Occasion(Other)</label>
                     {{ form.other_occasion }}
                     {% if form.other_occasion.help_text %}
                         <small class="form-text text-muted">{{ form.other_occasion.help_text }}</small>
@@ -111,7 +111,7 @@
             
                 {% comment %} Cake size {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.cake_size.label_tag }}
+                    <label for="id_cake_size" class="form-label">Size</label>
                     {{ form.cake_size }}
                     {% if form.cake_size.help_text %}
                         <small class="form-text text-muted">{{ form.cake_size.help_text }}</small>
@@ -122,7 +122,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="cake_other_size_section">
-                    {{ form.other_cake_size.label_tag }}
+                    <label for="id_other_cake_size" class="form-label">Custom size</label>
                     {{ form.other_cake_size }}
                     {% if form.other_cake_size.help_text %}
                         <small class="form-text text-muted">{{ form.other_cake_size.help_text }}</small>
@@ -138,7 +138,7 @@
             
                 {% comment %} Cake shape {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.cake_shape.label_tag }}
+                    <label for="id_cake_shape" class="form-label">Shape</label>
                     {{ form.cake_shape }}
                     {% if form.cake_shape.help_text %}
                         <small class="form-text text-muted">{{ form.cake_shape.help_text }}</small>
@@ -149,7 +149,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="cake_other_shape_section">
-                    {{ form.cake_other_shape.label_tag }}
+                    <label for="id_cake_other_shape" class="form-label">Custom Shape</label>
                     {{ form.cake_other_shape }}
                     {% if form.cake_other_shape.help_text %}
                         <small class="form-text text-muted">{{ form.cake_other_shape.help_text }}</small>
@@ -165,7 +165,7 @@
             
                 {% comment %} Cake flavors {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.cake_flavors.label_tag }}
+                    <label for="id_cake_flavors" class="form-label">Flavors</label>
                     {{ form.cake_flavors }}
                     {% if form.cake_flavors.help_text %}
                         <small class="form-text text-muted">{{ form.cake_flavors.help_text }}</small>
@@ -176,7 +176,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="cake_other_flavors_section">
-                    {{ form.cake_other_flavors.label_tag }}
+                    <label for="id_cake_other_flavors" class="form-label">Cream Cheese</label>
                     {{ form.cake_other_flavors }}
                     {% if form.cake_other_flavors.help_text %}
                         <small class="form-text text-muted">{{ form.cake_other_flavors.help_text }}</small>
@@ -191,7 +191,7 @@
 
                 {% comment %} Cake filling {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-            
+                    <label for="id_cake_filling" class="form-label">Filling</label>
                     {{ form.cake_filling.label_tag }}
                     {{ form.cake_filling }}
                     {% if form.cake_filling.help_text %}
@@ -203,7 +203,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="cake_other_filling_sectio">
-                    {{ form.cake_other_filling.label_tag }}
+                    <label for="id_cake_other_filling" class="form-label">Filling(Other)</label>
                     {{ form.cake_other_filling }}
                     {% if form.cake_other_filling.help_text %}
                         <small class="form-text text-muted">{{ form.cake_other_filling.help_text }}</small>
@@ -214,7 +214,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="fruit_types_sectio">
-                    {{ form.fruit_types.label_tag }}
+                    <label for="id_fruit_types" class="form-label">Filling Fruit</label>
                     {{ form.fruit_types }}
                     {% if form.fruit_types.help_text %}
                         <small class="form-text text-muted">{{ form.fruit_types.help_text }}</small>
@@ -229,7 +229,7 @@
 
                 {% comment %} Cake frosting {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.cake_frosting.label_tag }}
+                    <label for="id_cake_frosting" class="form-label">Frosting</label>
                     {{ form.cake_frosting }}
                     {% if form.cake_frosting.help_text %}
                         <small class="form-text text-muted">{{ form.cake_frosting.help_text }}</small>
@@ -244,7 +244,7 @@
 
                 {% comment %} Cake decorations {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.cake_decorations.label_tag }}
+                    <label for="id_cake_decorations" class="form-label">Decorations</label>
                     {{ form.cake_decorations }}
                     {% if form.cake_decorations.help_text %}
                         <small class="form-text text-muted">{{ form.cake_decorations.help_text }}</small>
@@ -255,7 +255,7 @@
                 </div>
             
                 <div class="col-12 col-md-6 mt-3" id="cake_other_decorations_sectio">
-                    {{ form.cake_other_decorations.label_tag }}
+                    <label for="id_cake_other_decorations" class="form-label">Custom decoration</label>
                     {{ form.cake_other_decorations }}
                     {% if form.cake_other_decorations.help_text %}
                         <small class="form-text text-muted">{{ form.cake_other_decorations.help_text }}</small>
@@ -270,7 +270,8 @@
 
                 {% comment %} Cake Text {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.text.label_tag }}
+                    <label for="id_text" class="form-label">Inscriptions Text</label>
+                    
                     {{ form.text }}
                     {% if form.text.help_text %}
                         <small class="form-text text-muted">{{ form.text.help_text }}</small>
@@ -284,7 +285,7 @@
 
                 {% comment %} Cake font style {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.font_style.label_tag }}
+                    <label for="id_font_style" class="form-label">Inscriptions fontstyle</label>
                     {{ form.font_style }}
                     {% if form.font_style.help_text %}
                         <small class="form-text text-muted">{{ form.font_style.help_text }}</small>
@@ -299,7 +300,7 @@
 
                 {% comment %} Cake color {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
-                    {{ form.colour.label_tag }}
+                    <label for="id_colour" class="form-label">Inscriptions Color</label>
                     {{ form.colour }}
                     {% if form.colour.help_text %}
                         <small class="form-text text-muted">{{ form.colour.help_text }}</small>
@@ -324,7 +325,7 @@
 
                 {% comment %} additional requests {% endcomment %}
                 <div class="col-12 mt-3">
-                    {{ form.additional_requests.label_tag }}
+                    <label for="id_additional_requests" class="form-label">Additional Requests/Notes</label>
                     {{ form.additional_requests }}
                     {% if form.additional_requests.help_text %}
                         <small class="form-text text-muted">{{ form.additional_requests.help_text }}</small>
@@ -336,7 +337,7 @@
 
                 {% comment %} Delivary type {% endcomment %}
                 <div class="col-12 mt-3">
-                    {{ form.delivaery_or_pickme.label_tag }}
+                    <label for="id_delivaery_or_pickme" class="form-label">Delivery or Pickup</label>
                     {{ form.delivaery_or_pickme }}
                     {% if form.delivaery_or_pickme.help_text %}
                         <small class="form-text text-muted">{{ form.delivaery_or_pickme.help_text }}</small>
@@ -349,7 +350,7 @@
                 {% comment %} Date {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
                     <div class="col-12">
-                        {{ form.preferred_date.label_tag }}
+                        <label for="id_preferred_date" class="form-label">Preferred Date</label>
                     </div>    
                     <div class="col-12 d-grid">
                         {{ form.preferred_date }}
@@ -366,7 +367,7 @@
                 {% comment %} Time {% endcomment %}
                 <div class="col-12 col-md-6 mt-3">
                     <div class="col-12">
-                        {{ form.preferred_time.label_tag }}
+                        <label for="id_preferred_time" class="form-label">Preferred Time</label>
                     </div>    
                     <div class="col-12 d-grid">
                         {{ form.preferred_time }}
@@ -382,7 +383,7 @@
             
                 {% comment %} Payment method {% endcomment %}
                 <div class="col-12 mt-3">
-                    {{ form.paymentmethod.label_tag }}
+                    <label for="id_paymentmethod" class="form-label">Payment Method</label>
                     {{ form.paymentmethod }}
                     {% if form.paymentmethod.help_text %}
                         <small class="form-text text-muted">{{ form.paymentmethod.help_text }}</small>
@@ -393,7 +394,7 @@
                 </div>
             
                 <div class="col-12 mt-3">
-                    {{ form.other_paymentmethod.label_tag }}
+                    <label for="id_other_paymentmethod" class="form-label">Other(Payment Method)</label>
                     {{ form.other_paymentmethod }}
                     {% if form.other_paymentmethod.help_text %}
                         <small class="form-text text-muted">{{ form.other_paymentmethod.help_text }}</small>
@@ -406,7 +407,7 @@
             
                 {% comment %}  Sampal image {% endcomment %}
                 <div class="mt-3">
-                    {{ form.image.label_tag }}
+                    <label for="id_image" class="form-label">Sample cake image</label>
                     {{ form.image }}
                     {% if form.image.help_text %}
                         <small class="form-text text-muted">{{ form.image.help_text }}</small>
@@ -600,7 +601,6 @@
             cake_other_decorations_field.querySelector('input').required = true;
             
         } else {
-            cake_other_decorations_label.style.display = 'none';
             cake_other_decorations_field.style.display = 'none';
             cake_other_decorations_field.querySelector('input').required = false;
             
